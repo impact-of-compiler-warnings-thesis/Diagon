@@ -27,7 +27,7 @@ jobs:
         run: |
           mkdir build 
           cd build 
-          cmake .. -GNinja -DDIAGON_BUILD_TESTS=ON -DDIAGON_BUILD_TESTS_FUZZER=ON
+          cmake .. -GNinja -DDIAGON_BUILD_TESTS=ON -DDIAGON_BUILD_TESTS_FUZZER=ON -DCMAKE_BUILD_TYPE=Debug
       - name: Run build-wrapper
         run: |
           build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} ninja -C build
